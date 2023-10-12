@@ -1,7 +1,7 @@
 
 
 const leadModel = require("../models/lead.js")
-const   OpenAIApi  = require("openai");
+
 
   const openai = new OpenAIApi({  apiKey: "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"});
 
@@ -72,22 +72,3 @@ exports.addNewMessage = async(req,res) =>{
 }
 
 
-exports.runCompletion = async (req,res) =>{
-    try{
-    const completion = await openai.chat.completions.create({
-      model: "text-davinci-003",
-      prompt: "How are you today?",
-    });
-res.status(200).json({
-    status:1,
-    data: completion
-})
-    }
-    catch(error){
-        res.status(400).json({
-            status: 0,
-            message: error.message,
-        })
-    }
-   
-    }

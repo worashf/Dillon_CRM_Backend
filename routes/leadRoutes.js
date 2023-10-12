@@ -4,7 +4,7 @@ const router = express.Router()
 
 const {createUser}= require("../controllers/userController")
 const {addCustomer,getAllCustomer } = require("../controllers/customerController")
-const {addLead, getAllLead,addNewMessage, runCompletion} = require("../controllers/leadController")
+const {addLead, getAllLead,addNewMessage, } = require("../controllers/leadController")
 
  router.route('/users').post(createUser)
  router.route('/customers').post(addCustomer)
@@ -13,6 +13,5 @@ const {addLead, getAllLead,addNewMessage, runCompletion} = require("../controlle
  router.route('/leads').get(getAllLead)
  router.route('/leads').put(addNewMessage)
 
- router.route('/chatgpt').get(runCompletion)
 
  module.exports = router
