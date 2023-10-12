@@ -3,7 +3,7 @@
 const leadModel = require("../models/lead.js")
 
 
-  const openai = new OpenAIApi({  apiKey: "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"});
+
 
 exports.addLead= async (req, res) => {
     try {
